@@ -21,8 +21,18 @@ const Generator = require('express-oas-generator');
 //"mongodb://127.0.0.1:27017/Classroom-Dev-Cluster-2"
 //const mongoURI = 'mongodb+srv://SeanRoo:Celtic88@classroom-isery.mongodb.net/test?retryWrites=true';
 //const conn = Mongoose.connect(config.database, {useNewUrlParser: true});
-Mongoose.connect(process.env.MONGODB_URI);
-
+//Mongoose.connect(process.env.MONGODB_URI);
+var uristring =
+    process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL ||
+    config.database;
+    Mongoose.connect(uristring, function (err, res) {
+        if (err) {
+        console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+        } else {
+        console.log ('Succeeded connected to: ' + uristring);
+        }
+      });
 
 let App = Express();
 
