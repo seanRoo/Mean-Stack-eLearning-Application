@@ -20,7 +20,7 @@ const methodOverride = require('method-override');
 const Generator = require('express-oas-generator');
 //"mongodb://127.0.0.1:27017/Classroom-Dev-Cluster-2"
 const mongoURI = 'mongodb+srv://SeanRoo:Celtic88@classroom-isery.mongodb.net/test?retryWrites=true';
-const conn = Mongoose.createConnection(mongoURI, {useNewUrlParser: true, useMongoClient: true});
+const conn = Mongoose.connect(mongoURI, {useNewUrlParser: true});
 
 
 let App = Express();
