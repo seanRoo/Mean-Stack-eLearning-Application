@@ -30,11 +30,11 @@ App.use(Parser.json());
 App.use(Parser.urlencoded( {extended: true} ));
 App.use(RequestLogger('dev')); // Replace with some good logging library eventually
 
-App.use(express.static(__dirname + '/dist/irish-rail-api-app'));
+App.use(Express.static(__dirname + '/public'));
 
 App.get('/', function(req,res) {
     
-    res.sendFile(path.join(__dirname+'/dist/C/index.html'));
+    res.sendFile(path.join(__dirname+'/public/index.html'));
     });
 
 
