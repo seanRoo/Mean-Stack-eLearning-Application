@@ -10,7 +10,7 @@ const GroupAPI = require('./Groups/group-api');
 const UploadAPI = require('./Uploads/uploads-api');
 const AnnotateAPI = require('./Annotations/annotation-api');
 const ActivityAPI = require('./Activity/activity-api');
-
+const config = require('./Config/database');
 const crypto = require('crypto');
 const multer = require('multer');
 const GridFsStorage=require('multer-gridfs-storage');
@@ -19,8 +19,8 @@ const methodOverride = require('method-override');
 
 const Generator = require('express-oas-generator');
 //"mongodb://127.0.0.1:27017/Classroom-Dev-Cluster-2"
-const mongoURI = 'mongodb+srv://SeanRoo:Celtic88@classroom-isery.mongodb.net/test?retryWrites=true';
-const conn = Mongoose.createConnection(mongoURI);
+const mongoURI = ('mongodb+srv://SeanRoo:Celtic88@classroom-isery.mongodb.net/test?retryWrites=true');
+const conn = Mongoose.connect(mongoURI, {useNewUrlParser: true});
 
 
 let App = Express();
