@@ -4,13 +4,20 @@
   "description": "The Open Source E-Learning Platform built on a modern technology stack",
   "main": "service.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "ng build --prod"
+  },
+  "engines": {
+    "node": "8.12.0",
+    "npm": "6.9.0"
   },
   "author": "Dave Kerr & Adam West, Maynooth University",
   "license": "ISC",
   "dependencies": {
     "@types/jquery": "^2.0.47",
     "annotator": "^2.0.0-dev.2",
+    "@angular/compiler": "~7.0.0",
+    "@angular/cli": "^7.3.9",
     "annotorious-bower": "^0.6.4",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
