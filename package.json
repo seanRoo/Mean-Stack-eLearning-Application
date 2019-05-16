@@ -4,7 +4,8 @@
   "description": "The Open Source E-Learning Platform built on a modern technology stack",
   "main": "service.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node service"
   },
   "author": "Dave Kerr & Adam West, Maynooth University",
   "license": "ISC",
