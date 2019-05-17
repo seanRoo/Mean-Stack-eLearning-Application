@@ -16,22 +16,21 @@ const multer = require('multer');
 const GridFsStorage=require('multer-gridfs-storage');
 const Grid=require('gridfs-stream');
 const methodOverride = require('method-override');
-const MongoClient = require('mongodb').MongoClient;
+//const MongoClient = require('mongodb').MongoClient;
 
 const Generator = require('express-oas-generator');
 //"mongodb://127.0.0.1:27017/Classroom-Dev-Cluster-2"
 //const mongoURI = "mongodb://SeanRoo:Celtic88@classroom-shard-00-00-isery.mongodb.net:27017,classroom-shard-00-01-isery.mongodb.net:27017,classroom-shard-00-02-isery.mongodb.net:27017/test?ssl=true&replicaSet=Classroom-shard-0&authSource=admin&retryWrites=true";
 
-const uri = encodeURI('mongodb+srv://SeanRoo:Celtic88@classroom-isery.mongodb.net/Classroom');
-Mongoose.connect(uri)
+Mongoose.set('debug', true);
+const uri = 'mongodb+srv://SeanRoo:Celtic88@classroom-isery.mongodb.net/Classroom';
+Mongoose.connect(uri, {useNewUrlParser: true})
 .then(() => console.log('connecting to database successful'))
 .catch(err => console.error('could not connect to mongo DB'))
 
 
 let App = Express();
 
-
-Mongoose.set('debug', true);
 App.use(Parser.json());
 App.use(Parser.urlencoded( {extended: true} ));
 App.use(RequestLogger('dev')); // Replace with some good logging library eventually
