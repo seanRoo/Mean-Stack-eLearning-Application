@@ -1,7 +1,10 @@
 const _Activity = require('./activity-model');
 const _User = require('../User/user-model');
 const Mongoose = require('mongoose');
-Mongoose.connect("localhost/Classroom-Dev-Cluster-2");
+const config = require('../Config/database');
+
+//Mongoose.connect("localhost/Classroom-Dev-Cluster-2");
+Mongoose.connect(config.database);
 
 module.exports.createActivity = (name, type, group, module_, tasks, callback) => {
 

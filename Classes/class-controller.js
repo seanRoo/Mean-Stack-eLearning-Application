@@ -3,8 +3,10 @@ const _User = require('../User/user-model');
 const _Class = require('./class-model');
 const Mongoose = require('mongoose');
 const AuthJWT = require('../JWT/jwt-controller');
+const config = require('../Config/database');
 
-Mongoose.connect("localhost/Classroom-Dev-Cluster-2");
+//Mongoose.connect("localhost/Classroom-Dev-Cluster-2");
+Mongoose.connect(config.database);
 
 // TODO: FIX ERROR CHECKING
 

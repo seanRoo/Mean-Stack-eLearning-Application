@@ -8,8 +8,10 @@ const _Group = require('../Groups/group-model');
 const Identifiers = require('../Groups/group-generators');
 const Mongoose = require('mongoose');
 
-Mongoose.connect("localhost/Classroom-Dev-Cluster-2");
+const config = require('../Config/database');
 
+//Mongoose.connect("localhost/Classroom-Dev-Cluster-2");
+Mongoose.connect(config.database);
 
 // TODO: Custom Enrolled Groups.
 // TODO: Automatically Created Groups from Classes.

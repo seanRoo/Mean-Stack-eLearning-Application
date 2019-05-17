@@ -1,8 +1,10 @@
 const _Annotation = require('./annotation-model');
 const Mongoose = require('mongoose');
 const Activity = require('../Activity/activity-controller');
-Mongoose.connect("localhost/Classroom-Dev-Cluster-2");
+const config = require('../Config/database');
 
+//Mongoose.connect("localhost/Classroom-Dev-Cluster-2");
+Mongoose.connect(config.database);
 
 module.exports.getAnnotations = (callback) => {
 

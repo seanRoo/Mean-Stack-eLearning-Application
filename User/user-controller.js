@@ -12,7 +12,10 @@ const Group = require('../Groups/group-controller');
 const _Group = require('../Groups/group-model');
 const bcrypt = require('bcryptjs');
 
-Mongoose.connect("localhost/Classroom-Dev-Cluster-2");
+const config = require('../Config/database');
+
+//Mongoose.connect("localhost/Classroom-Dev-Cluster-2");
+Mongoose.connect(config.database);
 
 
 // TODO: Add Callback Handle
