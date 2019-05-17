@@ -79,5 +79,7 @@ App.use('/', ActivityAPI);
 //App.use(cors());
 
 Generator.init(App, {});
-
-App.listen(process.env.PORT || 8080, console.log("Classroom Service Started"));
+const port = process.env.PORT || 8080;
+App.listen(port, ()=>{
+    console.log("Classroom Service Started");
+});
