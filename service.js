@@ -16,23 +16,17 @@ const multer = require('multer');
 const GridFsStorage=require('multer-gridfs-storage');
 const Grid=require('gridfs-stream');
 const methodOverride = require('method-override');
+const MongoClient = require('mongodb').MongoClient;
 
 const Generator = require('express-oas-generator');
 //"mongodb://127.0.0.1:27017/Classroom-Dev-Cluster-2"
-//const mongoURI = 'mongodb+srv://SeanRoo:Celtic88@classroom-isery.mongodb.net/test?retryWrites=true';
-//const conn = Mongoose.connect(config.database, {useNewUrlParser: true});
-//Mongoose.connect(process.env.MONGODB_URI);
-var uristring =
-    process.env.MONGOLAB_URI ||
-    process.env.MONGOHQ_URL ||
-    config.database;
-    Mongoose.connect(uristring, function (err, res) {
-        if (err) {
-        console.log ('ERROR connecting to: ' + uristring + '. ' + err);
-        } else {
-        console.log ('Succeeded connected to: ' + uristring);
-        }
-      });
+//const mongoURI = "mongodb://SeanRoo:Celtic88@classroom-shard-00-00-isery.mongodb.net:27017,classroom-shard-00-01-isery.mongodb.net:27017,classroom-shard-00-02-isery.mongodb.net:27017/test?ssl=true&replicaSet=Classroom-shard-0&authSource=admin&retryWrites=true";
+
+const uri = encodeURI('mongodb+srv://SeanRoo:Celtic88@classroom-isery.mongodb.net/Classroom');
+Mongoose.connect(uri)
+.then(() => console.log('connecting to database successful'))
+.catch(err => console.error('could not connect to mongo DB'))
+
 
 let App = Express();
 
