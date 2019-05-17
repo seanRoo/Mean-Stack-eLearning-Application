@@ -16,6 +16,7 @@ const multer = require('multer');
 const GridFsStorage=require('multer-gridfs-storage');
 const Grid=require('gridfs-stream');
 const methodOverride = require('method-override');
+const path = require('path');
 //const MongoClient = require('mongodb').MongoClient;
 
 const Generator = require('express-oas-generator');
@@ -35,9 +36,9 @@ App.use(Parser.json());
 App.use(Parser.urlencoded( {extended: true} ));
 App.use(RequestLogger('dev')); // Replace with some good logging library eventually
 
-App.use(Express.static(__dirname + '/public'));
-
-App.get('/', function(req,res) {
+App.use(Express.static(path.join(__dirname , 'public')));
+//App.use("/api", routes);
+App.get('*', function(req,res) {
     
     res.sendFile(path.join(__dirname+'/public/index.html'));
     });
