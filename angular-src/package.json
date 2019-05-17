@@ -7,8 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build --aot --target=production"
+    "e2e": "ng e2e"
   },
   "engines": {
     "node": "8.12.0",
@@ -20,7 +19,7 @@
     "@angular/cdk": "^7.3.6",
     "@angular/common": "~7.0.0",
     "@angular/compiler": "~7.0.0",
-    "@angular/cli": "^7.3.9",
+    "@angular/cli": "^7.0.2",
     "@angular/compiler-cli": "^7.2.15",
     "@angular/core": "~7.0.0",
     "@angular/flex-layout": "^7.0.0-beta.19",
