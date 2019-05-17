@@ -38,11 +38,13 @@ App.use(RequestLogger('dev')); // Replace with some good logging library eventua
 
 App.use(Express.static(path.join(__dirname , 'public')));
 //App.use("/api", routes);
-App.get('*', function(req,res) {
-    
-    res.sendFile(path.join(__dirname+'/public/index.html'));
-    });
+App.get('', function(req, res) {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
+App.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // Passport Middleware
 App.use(passport.initialize());
