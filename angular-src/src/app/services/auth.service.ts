@@ -49,7 +49,7 @@ export class AuthService {
       'Authorization': this.auth_token
     });
     return this.http.get('/profile',{headers:headers})
-    .pipe(map(res => res.json()));
+    .map(res => res.json());
   }
 
   storeUserData(token, user){
