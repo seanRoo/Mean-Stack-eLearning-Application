@@ -6446,7 +6446,7 @@ var AuthService = /** @class */ (function () {
             'Authorization': this.auth_token
         });
         return this.http.get('/profile', { headers: headers })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+            .map(function (res) { return res.json(); });
     };
     AuthService.prototype.storeUserData = function (token, user) {
         localStorage.setItem('_idtoken', token);
