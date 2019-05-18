@@ -39,7 +39,7 @@ export class AuthService {
   authenticateUser(user){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('authenticate', user, {headers: headers})
+    return this.http.post('/authenticate', user, {headers: headers})
     .pipe(map(res=> res.json()));
   }
    getProfile(){
@@ -48,7 +48,7 @@ export class AuthService {
       'Content-Type':  'application/json',
       'Authorization': this.auth_token
     });
-    return this.http.get('profile',{headers:headers})
+    return this.http.get('/profile',{headers:headers})
     .pipe(map(res => res.json()));
   }
 
