@@ -6436,7 +6436,7 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.authenticateUser = function (user) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('authenticate/', user, { headers: headers })
+        return this.http.post('authenticate', user, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     AuthService.prototype.getProfile = function () {
@@ -6445,7 +6445,7 @@ var AuthService = /** @class */ (function () {
             'Content-Type': 'application/json',
             'Authorization': this.auth_token
         });
-        return this.http.get('profile/', { headers: headers })
+        return this.http.get('profile', { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     AuthService.prototype.storeUserData = function (token, user) {
