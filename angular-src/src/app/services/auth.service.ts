@@ -19,7 +19,7 @@ export class AuthService {
   registerUser(user){
   	let headers = new Headers();
   	headers.append('Content-Type', 'application/json');
-  	return this.http.post('/api/users/createStud', user, {headers: headers})
+  	return this.http.post('/users/createStud', user, {headers: headers})
   	.pipe(map(res=> res.json()));
   }
   registerTeacher(teacher){
