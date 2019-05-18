@@ -7,6 +7,7 @@ import {Router, ActivatedRoute} from '@angular/router';
 import {DomSanitizer,SafeHtml,SafeUrl,SafeStyle} from '@angular/platform-browser';
 import {FormGroup, FormControl} from '@angular/forms';
 import { DOCUMENT } from '@angular/common'; 
+import 'rxjs/Rx'; 
 import {MatDialog, MAT_DIALOG_DATA, MatSidenav, MatDialogRef} from '@angular/material';
 declare var angular: any;
 declare var anno: any;

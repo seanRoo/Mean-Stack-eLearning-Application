@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { tokenNotExpired } from 'angular2-jwt';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +15,9 @@ export class AuthService {
   thisClass: any;
   module_code:any;
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) { 
+
+  }
 
   registerUser(user){
   	let headers = new Headers();
@@ -49,7 +52,7 @@ export class AuthService {
       'Authorization': this.auth_token
     });
     return this.http.get('/profile',{headers:headers})
-    .map(res => res.json());
+    .pipe(map(res => res.json()));
   }
 
   storeUserData(token, user){
