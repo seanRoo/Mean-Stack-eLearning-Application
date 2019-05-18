@@ -32,14 +32,14 @@ export class AuthService {
   getUser(email){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/user/'+email, {headers: headers})
+    return this.http.get('user/'+email, {headers: headers})
     .pipe(map(res=> res.json()));
   }
 
   authenticateUser(user){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/authenticate', user, {headers: headers})
+    return this.http.post('authenticate/', user, {headers: headers})
     .pipe(map(res=> res.json()));
   }
    getProfile(){
@@ -48,7 +48,7 @@ export class AuthService {
       'Content-Type':  'application/json',
       'Authorization': this.auth_token
     });
-    return this.http.get('http://localhost:3000/profile',{headers:headers})
+    return this.http.get('profile/',{headers:headers})
     .pipe(map(res => res.json()));
   }
 
@@ -98,7 +98,7 @@ updateUser(email, obj){
     const headers = new Headers({
       'Content-Type':  'application/json'
     });
-    return this.http.put('/api/user/update/'+email, body, {headers: headers})
+    return this.http.put('user/update/'+email, body, {headers: headers})
     .pipe(map(res=> res.json()));
   }
 }

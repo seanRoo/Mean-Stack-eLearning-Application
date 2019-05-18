@@ -13,20 +13,20 @@ export class ActivityService {
   getActivities(){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/activities/all', {headers: headers})
+    return this.http.get('activities/all', {headers: headers})
     .pipe(map(res=> res.json()));
   }
    getActivityByTitle(title){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/activity/'+ title, {headers: headers})
+    return this.http.get('activity/'+ title, {headers: headers})
     .pipe(map(res=> res.json()));
   }
 
     getActivitiesByModule(module){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/activity/module/'+ module, {headers: headers})
+    return this.http.get('activity/module/'+ module, {headers: headers})
     .pipe(map(res=> res.json()));
   }
 
@@ -37,14 +37,14 @@ export class ActivityService {
     const headers = new Headers({
       'Content-Type':  'application/json'
     });
-    return this.http.put('/api/activity/comments/update', body, {headers: headers})
+    return this.http.put('activity/comments/update', body, {headers: headers})
     .pipe(map(res=> res.json()));
   }
 
   deleteActivity(activity){
    let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.delete('/api/activity/delete/'+ activity, {headers: headers})
+    return this.http.delete('activity/delete/'+ activity, {headers: headers})
     .pipe(map(res=> res.json()));
  }
 
@@ -56,7 +56,7 @@ export class ActivityService {
     const headers = new Headers({
       'Content-Type':  'application/json'
     });
-    return this.http.put('/api/activity/submissions/update', body, {headers: headers})
+    return this.http.put('activity/submissions/update', body, {headers: headers})
     .pipe(map(res=> res.json()));
   }
     
@@ -68,7 +68,7 @@ export class ActivityService {
     const headers = new Headers({
       'Content-Type':  'application/json'
     });
-    return this.http.put('/api/user/update/submission/'+email, body, {headers: headers})
+    return this.http.put('user/update/submission/'+email, body, {headers: headers})
     .pipe(map(res=> res.json()));
   }
 
@@ -82,14 +82,14 @@ export class ActivityService {
     const headers = new Headers({
       'Content-Type':  'application/json'
     });
-    return this.http.put('/api/annotation/feedback', body, {headers: headers})
+    return this.http.put('annotation/feedback', body, {headers: headers})
     .pipe(map(res=> res.json()));
   }
 
   getComments(activityName){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/activity/group/'+activityName+'/comments', {headers: headers})
+    return this.http.get('activity/group/'+activityName+'/comments', {headers: headers})
     .pipe(map(res=> res.json()));
   }
 
