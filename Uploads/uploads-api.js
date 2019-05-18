@@ -8,10 +8,13 @@ const methodOverride = require('method-override');
 const _Upload = require('./uploads-model');
 
 
+const config = require('../Config/database');
 
-const mongoURI = "mongodb://127.0.0.1:27017/Classroom-Dev-Cluster-2";
+//Mongoose.connect("localhost/Classroom-Dev-Cluster-2");
+const conn = mongoose.connect(config.database);
+//const mongoURI = "mongodb://127.0.0.1:27017/Classroom-Dev-Cluster-2";
 //mongoose.connect(mongoURI);
-const conn = mongoose.createConnection(mongoURI);
+//const conn = mongoose.createConnection(mongoURI);
 
 
 let UploadAPI = Express.Router();
