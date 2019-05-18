@@ -14,25 +14,25 @@ export class TaskService {
   getTaskByFilename(filename){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/files/file='+ filename, {headers: headers})
+    return this.http.get('files/file='+ filename, {headers: headers})
     .pipe(map(res=> res.json()));
   }
   getTaskByTitle(title){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/files/title='+ title, {headers: headers})
+    return this.http.get('files/title='+ title, {headers: headers})
     .pipe(map(res=> res.json()));
   }
   getTaskByModule(module){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/files/module='+ module, {headers: headers})
+    return this.http.get('files/module='+ module, {headers: headers})
     .pipe(map(res=> res.json()));
   }
   getTaskMultiple(task, activity){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/files/'+ activity + '/'+ task, {headers: headers})
+    return this.http.get('files/'+ activity + '/'+ task, {headers: headers})
     .pipe(map(res=> res.json()));
   }
   storeFileData(filename){
@@ -49,42 +49,42 @@ export class TaskService {
   submitActivity(activity){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/activity/create', activity ,{headers: headers})
+    return this.http.post('activity/create', activity ,{headers: headers})
     .pipe(map(res=> res.json()));
   }
 
   submitAnnotation(annotation){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/annotation/create', annotation ,{headers: headers})
+    return this.http.post('annotation/create', annotation ,{headers: headers})
     .pipe(map(res=> res.json()));
   }
 
   getActivityByTitle(title){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/activity/'+ title, {headers: headers})
+    return this.http.get('activity/'+ title, {headers: headers})
     .pipe(map(res=> res.json()));
   }
 
   getFilesByActName(actName){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/files/activityname='+ actName, {headers: headers})
+    return this.http.get('files/activityname='+ actName, {headers: headers})
     .pipe(map(res=> res.json()));
   }
 
   getFilesByModule(module){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/files/module='+ module, {headers: headers})
+    return this.http.get('files/module='+ module, {headers: headers})
     .pipe(map(res=> res.json()));
   }
 
    getAnnotations(){
    let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/annotations', {headers: headers})
+    return this.http.get('annotations', {headers: headers})
     .pipe(map(res=> res.json()));
 
  }
@@ -93,7 +93,7 @@ export class TaskService {
 
    let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/annotations/user='+ email + '/activity='+ activityName + '/task='+taskName, {headers: headers})
+    return this.http.get('annotations/user='+ email + '/activity='+ activityName + '/task='+taskName, {headers: headers})
     .pipe(map(res=> res.json()));
 
  }
@@ -104,14 +104,14 @@ export class TaskService {
    }
    let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.delete('/api/annotations/delete', {headers: headers, body: body})
+    return this.http.delete('annotations/delete', {headers: headers, body: body})
     .pipe(map(res=> res.json()));
  }
  
  deleteTasksByActivity(activity){
    let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.delete('/api/tasks/delete/'+ activity, {headers: headers})
+    return this.http.delete('tasks/delete/'+ activity, {headers: headers})
     .pipe(map(res=> res.json()));
  }
 }

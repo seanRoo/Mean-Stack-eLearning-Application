@@ -13,14 +13,14 @@ email: any;
   getClasses(){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/classes', {headers: headers})
+    return this.http.get('classes', {headers: headers})
     .pipe(map(res=> res.json()));
   }
 
  getClassByModule(module){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/class/module=' + module, {headers: headers})
+    return this.http.get('class/module=' + module, {headers: headers})
     .pipe(map(res=> res.json()));
   }
 
@@ -28,26 +28,26 @@ email: any;
   getClassById(id){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/class/id=' + id, {headers: headers})
+    return this.http.get('class/id=' + id, {headers: headers})
     .pipe(map(res=> res.json()));
   }
 
   getTeacher(email){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/user/' + email, {headers: headers})
+    return this.http.get('user/' + email, {headers: headers})
     .pipe(map(res=> res.json()));
   }
   createClass(thisClass){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/class/create', thisClass, {headers: headers})
+    return this.http.post('class/create', thisClass, {headers: headers})
     .pipe(map(res=> res.json()));
   }
   enrollClass(module_code, user){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/class/enroll/'+module_code, user, {headers: headers})
+    return this.http.post('class/enroll/'+module_code, user, {headers: headers})
     .pipe(map(res=> res.json()));
   }
 
@@ -71,25 +71,25 @@ email: any;
   getfiles(module_code){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/files/module='+ module_code, {headers: headers})
+    return this.http.get('files/module='+ module_code, {headers: headers})
     .pipe(map(res=> res.json()));
   }
   getImages(file){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/files/file='+ file, {headers: headers})
+    return this.http.get('files/file='+ file, {headers: headers})
     .pipe(map(res=> res.json()));
   }
   getStudents(){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/users/students', {headers: headers})
+    return this.http.get('users/students', {headers: headers})
     .pipe(map(res=> res.json()));
   }
   getStudentsByModule(module){
       let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/classes/students/'+ module, {headers: headers})
+    return this.http.get('classes/students/'+ module, {headers: headers})
     .pipe(map(res=> res.json()));
   }
 

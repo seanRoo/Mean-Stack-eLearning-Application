@@ -6535,37 +6535,37 @@ var ClassService = /** @class */ (function () {
     ClassService.prototype.getClasses = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/classes', { headers: headers })
+        return this.http.get('classes', { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ClassService.prototype.getClassByModule = function (module) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/class/module=' + module, { headers: headers })
+        return this.http.get('class/module=' + module, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ClassService.prototype.getClassById = function (id) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/class/id=' + id, { headers: headers })
+        return this.http.get('class/id=' + id, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ClassService.prototype.getTeacher = function (email) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/user/' + email, { headers: headers })
+        return this.http.get('user/' + email, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ClassService.prototype.createClass = function (thisClass) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('/api/class/create', thisClass, { headers: headers })
+        return this.http.post('class/create', thisClass, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ClassService.prototype.enrollClass = function (module_code, user) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('/api/class/enroll/' + module_code, user, { headers: headers })
+        return this.http.post('class/enroll/' + module_code, user, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ClassService.prototype.storeClassData = function (thisModuleCode, email) {
@@ -6586,25 +6586,25 @@ var ClassService = /** @class */ (function () {
     ClassService.prototype.getfiles = function (module_code) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/files/module=' + module_code, { headers: headers })
+        return this.http.get('files/module=' + module_code, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ClassService.prototype.getImages = function (file) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/files/file=' + file, { headers: headers })
+        return this.http.get('files/file=' + file, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ClassService.prototype.getStudents = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/users/students', { headers: headers })
+        return this.http.get('users/students', { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ClassService.prototype.getStudentsByModule = function (module) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/classes/students/' + module, { headers: headers })
+        return this.http.get('classes/students/' + module, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ClassService = __decorate([
@@ -6691,25 +6691,25 @@ var TaskService = /** @class */ (function () {
     TaskService.prototype.getTaskByFilename = function (filename) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/files/file=' + filename, { headers: headers })
+        return this.http.get('files/file=' + filename, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     TaskService.prototype.getTaskByTitle = function (title) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/files/title=' + title, { headers: headers })
+        return this.http.get('files/title=' + title, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     TaskService.prototype.getTaskByModule = function (module) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/files/module=' + module, { headers: headers })
+        return this.http.get('files/module=' + module, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     TaskService.prototype.getTaskMultiple = function (task, activity) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/files/' + activity + '/' + task, { headers: headers })
+        return this.http.get('files/' + activity + '/' + task, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     TaskService.prototype.storeFileData = function (filename) {
@@ -6726,43 +6726,43 @@ var TaskService = /** @class */ (function () {
     TaskService.prototype.submitActivity = function (activity) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('/api/activity/create', activity, { headers: headers })
+        return this.http.post('activity/create', activity, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     TaskService.prototype.submitAnnotation = function (annotation) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('/api/annotation/create', annotation, { headers: headers })
+        return this.http.post('annotation/create', annotation, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     TaskService.prototype.getActivityByTitle = function (title) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/activity/' + title, { headers: headers })
+        return this.http.get('activity/' + title, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     TaskService.prototype.getFilesByActName = function (actName) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/files/activityname=' + actName, { headers: headers })
+        return this.http.get('files/activityname=' + actName, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     TaskService.prototype.getFilesByModule = function (module) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/files/module=' + module, { headers: headers })
+        return this.http.get('files/module=' + module, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     TaskService.prototype.getAnnotations = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/annotations', { headers: headers })
+        return this.http.get('annotations', { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     TaskService.prototype.getAnnotationsByEmail = function (email, activityName, taskName) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/annotations/user=' + email + '/activity=' + activityName + '/task=' + taskName, { headers: headers })
+        return this.http.get('annotations/user=' + email + '/activity=' + activityName + '/task=' + taskName, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     TaskService.prototype.deleteAnnotation = function (text) {
@@ -6771,13 +6771,13 @@ var TaskService = /** @class */ (function () {
         };
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.delete('/api/annotations/delete', { headers: headers, body: body })
+        return this.http.delete('annotations/delete', { headers: headers, body: body })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     TaskService.prototype.deleteTasksByActivity = function (activity) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.delete('/api/tasks/delete/' + activity, { headers: headers })
+        return this.http.delete('tasks/delete/' + activity, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     TaskService = __decorate([
