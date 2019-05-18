@@ -109,23 +109,25 @@ form=new FormGroup({email: new FormControl()});
       console.log(data);
     })
 
-    this.authService.getProfile().subscribe(
-      suc=>{
-          console.log("Success!");
+    this.authService.getProfile().subscribe(data=>{
+      console.log(data);
+    });
+      // suc=>{
+      //     console.log("Success!");
           
-         this.user = suc.user;
-         this.email = suc.user.email;
-         for(var i = 0; i< suc.user.submissions.length; i++){
-           if(suc.user.submissions[i].activityName == this.activityname){
-             this.submissionArray[i] = suc.user.submissions[i];
-           }
-         }
-         console.log(this.submissionArray);
+      //    this.user = suc.user;
+      //    this.email = suc.user.email;
+      //    for(var i = 0; i< suc.user.submissions.length; i++){
+      //      if(suc.user.submissions[i].activityName == this.activityname){
+      //        this.submissionArray[i] = suc.user.submissions[i];
+      //      }
+      //    }
+      //    console.log(this.submissionArray);
           
-      },
-      err=>{
-        console.log("Something went wrong!");
-      });
+      // },
+      // err=>{
+      //   console.log("Something went wrong!");
+      // });
   }
 
 checkSingleAns(index){

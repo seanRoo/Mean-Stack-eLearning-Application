@@ -3844,19 +3844,23 @@ var ActivityComponent = /** @class */ (function () {
             _this.images = data;
             console.log(data);
         });
-        this.authService.getProfile().subscribe(function (suc) {
-            console.log("Success!");
-            _this.user = suc.user;
-            _this.email = suc.user.email;
-            for (var i = 0; i < suc.user.submissions.length; i++) {
-                if (suc.user.submissions[i].activityName == _this.activityname) {
-                    _this.submissionArray[i] = suc.user.submissions[i];
-                }
-            }
-            console.log(_this.submissionArray);
-        }, function (err) {
-            console.log("Something went wrong!");
+        this.authService.getProfile().subscribe(function (data) {
+            console.log(data);
         });
+        // suc=>{
+        //     console.log("Success!");
+        //    this.user = suc.user;
+        //    this.email = suc.user.email;
+        //    for(var i = 0; i< suc.user.submissions.length; i++){
+        //      if(suc.user.submissions[i].activityName == this.activityname){
+        //        this.submissionArray[i] = suc.user.submissions[i];
+        //      }
+        //    }
+        //    console.log(this.submissionArray);
+        // },
+        // err=>{
+        //   console.log("Something went wrong!");
+        // });
     };
     ActivityComponent.prototype.checkSingleAns = function (index) {
         if (this.tasks[index] == null) {
