@@ -11,7 +11,7 @@ const _Upload = require('./uploads-model');
 const config = require('../Config/database');
 
 //Mongoose.connect("localhost/Classroom-Dev-Cluster-2");
-const conn = mongoose.connect(config.database);
+const conn = mongoose.createConnection(config.database);
 //const mongoURI = "mongodb://127.0.0.1:27017/Classroom-Dev-Cluster-2";
 //mongoose.connect(mongoURI);
 //const conn = mongoose.createConnection(mongoURI);
@@ -27,7 +27,7 @@ conn.once('open',()=>{
   //gfs.collection('uploads');
 });
 const storage = new GridFsStorage({
-  url: mongoURI,
+  url: config.database,
   file: (req, file) => {
     return new Promise((resolve, reject) => {
       crypto.randomBytes(16, (err, buf) => {
