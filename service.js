@@ -27,7 +27,7 @@ Mongoose.set('debug', true);
 //const uri = 'mongodb://SeanRoo:Celtic88@classroom-shard-00-00-isery.mongodb.net:27017,classroom-shard-00-01-isery.mongodb.net:27017,classroom-shard-00-02-isery.mongodb.net:27017/test?ssl=true&replicaSet=Classroom-shard-0&authSource=admin&retryWrites=true';
 Mongoose.connect(mongoURI || process.env.MONGOLAB_URI, {useNewUrlParser: true})
 .then(() => console.log('connecting to database successful '))
-.catch(err => console.error('could not connect to mongo DB'))
+.catch(err => console.error('could not connect to mongo DB ' + err))
 
 
 let App = Express();
