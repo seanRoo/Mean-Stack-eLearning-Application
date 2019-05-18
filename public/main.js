@@ -6298,19 +6298,19 @@ var ActivityService = /** @class */ (function () {
     ActivityService.prototype.getActivities = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/activities/all', { headers: headers })
+        return this.http.get('activities/all', { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ActivityService.prototype.getActivityByTitle = function (title) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/activity/' + title, { headers: headers })
+        return this.http.get('activity/' + title, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ActivityService.prototype.getActivitiesByModule = function (module) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/activity/module/' + module, { headers: headers })
+        return this.http.get('activity/module/' + module, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ActivityService.prototype.updateComments = function (activity, comment) {
@@ -6321,13 +6321,13 @@ var ActivityService = /** @class */ (function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
             'Content-Type': 'application/json'
         });
-        return this.http.put('/api/activity/comments/update', body, { headers: headers })
+        return this.http.put('activity/comments/update', body, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ActivityService.prototype.deleteActivity = function (activity) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.delete('/api/activity/delete/' + activity, { headers: headers })
+        return this.http.delete('activity/delete/' + activity, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ActivityService.prototype.updateSubmissions = function (activity, sub) {
@@ -6338,7 +6338,7 @@ var ActivityService = /** @class */ (function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
             'Content-Type': 'application/json'
         });
-        return this.http.put('/api/activity/submissions/update', body, { headers: headers })
+        return this.http.put('activity/submissions/update', body, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ActivityService.prototype.updateUserSubmission = function (email, sub) {
@@ -6348,7 +6348,7 @@ var ActivityService = /** @class */ (function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
             'Content-Type': 'application/json'
         });
-        return this.http.put('/api/user/update/submission/' + email, body, { headers: headers })
+        return this.http.put('user/update/submission/' + email, body, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ActivityService.prototype.updateFeedback = function (email, context, feedback, index) {
@@ -6361,13 +6361,13 @@ var ActivityService = /** @class */ (function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
             'Content-Type': 'application/json'
         });
-        return this.http.put('/api/annotation/feedback', body, { headers: headers })
+        return this.http.put('annotation/feedback', body, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ActivityService.prototype.getComments = function (activityName) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/activity/group/' + activityName + '/comments', { headers: headers })
+        return this.http.get('activity/group/' + activityName + '/comments', { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ActivityService = __decorate([
@@ -6430,13 +6430,13 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.getUser = function (email) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/user/' + email, { headers: headers })
+        return this.http.get('user/' + email, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     AuthService.prototype.authenticateUser = function (user) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('/api/authenticate', user, { headers: headers })
+        return this.http.post('authenticate/', user, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     AuthService.prototype.getProfile = function () {
@@ -6445,7 +6445,7 @@ var AuthService = /** @class */ (function () {
             'Content-Type': 'application/json',
             'Authorization': this.auth_token
         });
-        return this.http.get('http://localhost:3000/profile', { headers: headers })
+        return this.http.get('profile/', { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     AuthService.prototype.storeUserData = function (token, user) {
@@ -6487,7 +6487,7 @@ var AuthService = /** @class */ (function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
             'Content-Type': 'application/json'
         });
-        return this.http.put('/api/user/update/' + email, body, { headers: headers })
+        return this.http.put('user/update/' + email, body, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     AuthService = __decorate([
