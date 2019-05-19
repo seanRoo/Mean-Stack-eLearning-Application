@@ -71,9 +71,9 @@ App.use('/', ActivityAPI);
 
 //App.use(cors());
 
-App.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/index.html'));
-  });
+// App.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'public/index.html'));
+//   });
 App.get('/', (req, res) => {
     res.send('invaild endpoint');
 });
