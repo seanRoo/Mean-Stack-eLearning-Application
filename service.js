@@ -61,13 +61,13 @@ App.use(function(req, res, next) { //allow cross origin requests
 
 
 
-App.use('/api/users', UserAPI);
-App.use('/api/authentication', AuthAPI);
-App.use('/api/class', ClassAPI);
-App.use('api/group', GroupAPI);
-App.use('/api/upload', UploadAPI);
-App.use('/api/annotate', AnnotateAPI);
-App.use('/api/activity', ActivityAPI);
+App.use('/', UserAPI);
+App.use('/', AuthAPI);
+App.use('/', ClassAPI);
+App.use('/', GroupAPI);
+App.use('/', UploadAPI);
+App.use('/', AnnotateAPI);
+App.use('/', ActivityAPI);
 
 //App.use(cors());
 
