@@ -38,12 +38,7 @@ App.use(RequestLogger('dev')); // Replace with some good logging library eventua
 
 App.use(Express.static(path.join(__dirname , 'public')));
 //App.use("/api", routes);
-App.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/index.html'));
-  });
-App.get('/', (req, res) => {
-    res.send('invaild endpoint');
-});
+
 // Passport Middleware
 App.use(passport.initialize());
 App.use(passport.session());
@@ -66,15 +61,22 @@ App.use(function(req, res, next) { //allow cross origin requests
 
 
 
-App.use('/', UserAPI);
-App.use('/', AuthAPI);
-App.use('/', ClassAPI);
-App.use('/', GroupAPI);
-App.use('/', UploadAPI);
-App.use('/', AnnotateAPI);
-App.use('/', ActivityAPI);
+App.use('/api/users', UserAPI);
+App.use('/api/authentication', AuthAPI);
+App.use('/api/class', ClassAPI);
+App.use('api/group', GroupAPI);
+App.use('/api/upload', UploadAPI);
+App.use('/api/annotate', AnnotateAPI);
+App.use('/api/activity', ActivityAPI);
 
 //App.use(cors());
+
+App.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+  });
+App.get('/', (req, res) => {
+    res.send('invaild endpoint');
+});
 
 Generator.init(App, {});
 const port = process.env.PORT || 8080;
