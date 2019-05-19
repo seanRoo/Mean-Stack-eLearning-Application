@@ -36,7 +36,9 @@ App.use(Parser.json());
 App.use(Parser.urlencoded( {extended: true} ));
 App.use(RequestLogger('dev')); // Replace with some good logging library eventually
 
-App.use(Express.static(path.join(__dirname , 'public')));
+if (process.env.NODE_ENV === 'production') {
+    App.use(Express.static(path.join(__dirname , 'public')));
+}
 //App.use("/api", routes);
 
 // Passport Middleware
@@ -71,9 +73,9 @@ App.use('/', ActivityAPI);
 
 //App.use(cors());
 
-// App.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public/index.html'));
-//   });
+App.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+  });
 App.get('/', (req, res) => {
     res.send('invaild endpoint');
 });
